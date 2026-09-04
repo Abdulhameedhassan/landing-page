@@ -500,3 +500,24 @@ body {
   top: 20px; /* المسافة من أعلى الشاشة أثناء التثبيت */
   align-self: start;
 }
+.btn-wa {
+  background-color: #25D366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-wa:hover {
+  background-color: #20ba5a;
+}
+
+.btn-wa svg {
+  fill: #ffffff;
+}
