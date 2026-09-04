@@ -3,24 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modon Ras El Hekma Project</title>
-  <!-- ربط ملف الـ CSS الخارجي -->
+  <title>Modon Ras El Hekma Project - Dee Properties</title>
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
-  <section class="project-hero-section">
-    <!-- عنوان المسار -->
+  <!-- 1. Header Section -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <strong style="font-size: 24px; color: #111827;">Dee Properties</strong>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#overview">Projects</a></li>
+          <li><a href="#amenities">Units</a></li>
+          <li><a href="#payment">Payment Plan</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch">
+        <button class="btn-lang">AR</button>
+        <button class="btn-lang active">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Hero & Masterplan Section -->
+  <section id="hero" class="project-hero-section container">
     <div class="breadcrumb">
       <a href="#">Home</a> / <a href="#">Ras al-Hikma city</a> / <span>Modon Ras El Hekma Project</span>
     </div>
 
     <h1 class="project-title">Modon Ras El Hekma Project – Masterplan, Location & Infrastructure</h1>
 
-    <!-- شبكة المحتوى (الصور + كارت البيانات) -->
     <div class="project-grid-container">
-      
-      <!-- جهة اليسار: شبكة الصور الثلاثية -->
       <div class="project-gallery">
         <div class="gallery-item main-img">
           <img src="images/project-main.jpg" alt="Modon Ras El Hekma Masterplan">
@@ -33,11 +51,10 @@
         </div>
       </div>
 
-      <!-- جهة اليمين: كارت التفاصيل والسعر -->
       <div class="project-info-card">
         <div class="card-top-header">
           <span class="price-label">Starting Price</span>
-          <div class="price-value">13000000 <span>EGP</span></div>
+          <div class="price-value">13,000,000 <span>EGP</span></div>
         </div>
 
         <div class="highlights-row">
@@ -76,9 +93,79 @@
 
         <a href="tel:+201000000000" class="btn-call-now">Call Now</a>
       </div>
-
     </div>
   </section>
+
+  <!-- 3. Overview / Description Section -->
+  <section id="overview" class="content-section container">
+    <h2>About Modon Ras El Hekma</h2>
+    <p>
+      Modon Ras El Hekma is a premier coastal destination located in the heart of Ras El Hekma, North Coast. 
+      Designed to offer world-class living standards with sustainable infrastructure, crystal lagoons, and luxury residential units.
+    </p>
+  </section>
+
+  <!-- 4. Amenities Section -->
+  <section id="amenities" class="content-section container">
+    <h2>Project Amenities & Features</h2>
+    <div class="amenities-grid">
+      <div class="amenity-card">
+        <h3>Private Beach</h3>
+        <p>Direct access to pristine Mediterranean beach lines.</p>
+      </div>
+      <div class="amenity-card">
+        <h3>Crystal Lagoons</h3>
+        <p>Swimmable lagoons spread across the whole project.</p>
+      </div>
+      <div class="amenity-card">
+        <h3>Commercial Hub</h3>
+        <p>International brands, dining restaurants, and cafes.</p>
+      </div>
+      <div class="amenity-card">
+        <h3>24/7 Security</h3>
+        <p>Gated community with smart security systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Payment Plan Section -->
+  <section id="payment" class="content-section container">
+    <h2>Payment Plans</h2>
+    <div class="payment-box">
+      <div class="plan">
+        <h3>Option 1</h3>
+        <p><strong>5% Down Payment</strong> with remaining equal installments over <strong>8 Years</strong>.</p>
+      </div>
+      <div class="plan">
+        <h3>Option 2</h3>
+        <p><strong>10% Down Payment</strong> with remaining equal installments over <strong>9 Years</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Contact Form Section -->
+  <section id="contact" class="content-section container contact-section">
+    <h2>Register Your Interest</h2>
+    <form id="landingContactForm" class="contact-form">
+      <div class="form-group">
+        <input type="text" name="Name" placeholder="Full Name" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" name="Phone" placeholder="Phone Number" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="Email" placeholder="Email Address">
+      </div>
+      <button type="submit" class="btn-submit">Request Details</button>
+    </form>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Dee Properties. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
