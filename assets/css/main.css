@@ -1,4 +1,3 @@
-/* Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,281 +5,77 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #1a202c;
-  background-color: #fcfcfc;
-  line-height: 1.6;
+  font-family: sans-serif;
+  background-color: #ffffff;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* 1. Header */
+/* الهيدر العلوي */
 .site-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 40px;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.main-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
+.logo img {
+  height: 40px;
 }
 
-.main-nav a {
+.nav-links a {
+  margin: 0 12px;
   text-decoration: none;
   color: #4a5568;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-.main-nav a:hover {
-  color: #f59e0b;
+.lang-switch {
+  display: flex;
+  background-color: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
 }
 
-.lang-switch .btn-lang {
-  border: 1px solid #cbd5e0;
-  background: transparent;
+.lang-btn {
   padding: 4px 10px;
-  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4b5563;
   cursor: pointer;
 }
 
-.lang-switch .btn-lang.active {
-  background: #f59e0b;
-  color: #fff;
-  border-color: #f59e0b;
+.lang-btn.active {
+  background-color: #f59e0b;
+  color: #ffffff;
+  border-radius: 4px;
 }
 
-/* 2. Hero Section */
-.project-hero-section {
-  margin-top: 30px;
-  margin-bottom: 40px;
+/* قسم المسار والعنوان */
+.hero-text-section {
+  max-width: 1200px;
+  margin: 25px auto 15px auto;
+  padding: 0 20px;
 }
 
 .breadcrumb {
-  font-size: 14px;
-  color: #718096;
-  margin-bottom: 12px;
+  font-size: 13px;
+  color: #8c8c8c;
+  margin-bottom: 10px;
 }
 
 .breadcrumb a {
-  color: #718096;
+  color: #8c8c8c;
   text-decoration: none;
 }
 
-.project-title {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 24px;
-  line-height: 1.3;
-}
-
-.project-grid-container {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 24px;
-  align-items: start;
-}
-
-.project-gallery {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  grid-template-rows: 200px 200px;
-  gap: 12px;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.main-img {
-  grid-row: 1 / span 2;
-}
-
-.project-info-card {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
-  overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-}
-
-.card-top-header {
-  background: #111827;
-  color: #ffffff;
-  padding: 20px 24px;
-}
-
-.price-label {
-  display: block;
-  font-size: 13px;
-  color: #9ca3af;
-}
-
-.price-value {
+.main-title {
   font-size: 26px;
   font-weight: 800;
-}
-
-.price-value span {
-  font-size: 16px;
-}
-
-.highlights-row {
-  display: flex;
-  justify-content: space-between;
-  background: #f8fafc;
-  padding: 16px 20px;
-  border-bottom: 1px solid #e2e8f0;
-  text-align: center;
-}
-
-.highlight-box strong {
-  display: block;
-  font-size: 20px;
-  color: #0f172a;
-}
-
-.highlight-box span {
-  font-size: 12px;
-  color: #64748b;
-}
-
-.details-list {
-  padding: 20px 24px;
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  font-size: 14px;
-}
-
-.btn-call-now {
-  display: block;
-  background: #f59e0b;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px;
-  margin: 0 24px 24px;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-/* 3. Content Sections General */
-.content-section {
-  padding: 40px 20px;
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
-  margin-bottom: 30px;
-}
-
-.content-section h2 {
-  font-size: 22px;
-  margin-bottom: 16px;
-  color: #111827;
-}
-
-/* 4. Amenities Grid */
-.amenities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.amenity-card {
-  padding: 20px;
-  background: #f8fafc;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-}
-
-/* 5. Payment Plans */
-.payment-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.plan {
-  padding: 20px;
-  background: #f8fafc;
-  border-left: 4px solid #f59e0b;
-  border-radius: 8px;
-}
-
-/* 6. Form */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 500px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #cbd5e0;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-.btn-submit {
-  background: #111827;
-  color: #fff;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Footer */
-.site-footer {
-  background: #111827;
-  color: #9ca3af;
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 50px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 992px) {
-  .project-grid-container, .payment-box {
-    grid-template-columns: 1fr;
-  }
-  .main-nav {
-    display: none; /* يمكن تحويلها لمنيو موبايل مستقبلاً */
-  }
-}
-
-@media (max-width: 576px) {
-  .project-gallery {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .main-img {
-    grid-row: auto;
-  }
+  color: #1a1a1a;
 }
