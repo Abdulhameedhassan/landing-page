@@ -5,13 +5,14 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: #ffffff;
+  color: #1a1a1a;
 }
 
-/* الهيدر العلوي */
+/* الهيدر */
 .site-header {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #e5e7eb;
   padding: 15px 40px;
 }
 
@@ -23,14 +24,10 @@ body {
   margin: 0 auto;
 }
 
-.logo img {
-  height: 40px;
-}
-
 .nav-links a {
   margin: 0 12px;
   text-decoration: none;
-  color: #4a5568;
+  color: #4b5563;
   font-weight: 600;
   font-size: 14px;
 }
@@ -56,7 +53,7 @@ body {
   border-radius: 4px;
 }
 
-/* قسم المسار والعنوان */
+/* العنوان والمسار */
 .hero-text-section {
   max-width: 1200px;
   margin: 25px auto 15px auto;
@@ -77,151 +74,9 @@ body {
 .main-title {
   font-size: 26px;
   font-weight: 800;
-  color: #1a1a1a;
-}
-/* تنسيق سكشن الصور وكارت الأسعار */
-.project-details-section {
-  max-width: 1200px;
-  margin: 20px auto 40px auto;
-  padding: 0 20px;
+  color: #111827;
 }
 
-.project-grid-container {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 24px;
-  align-items: start;
-}
-
-/* شبكة الصور */
-.project-gallery {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  grid-template-rows: 200px 200px;
-  gap: 12px;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-  background-color: #e2e8f0; /* خلفية مؤقتة لحد ما تضيف الصور */
-}
-
-.main-img {
-  grid-row: 1 / span 2;
-}
-
-/* كارت الأسعار */
-.project-info-card {
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-}
-
-.card-top-header {
-  background: #1f242e;
-  color: #ffffff;
-  padding: 20px 24px;
-}
-
-.price-label {
-  display: block;
-  font-size: 13px;
-  color: #9ca3af;
-  margin-bottom: 4px;
-}
-
-.price-value {
-  font-size: 26px;
-  font-weight: 800;
-}
-
-.price-value span {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.highlights-row {
-  display: flex;
-  justify-content: space-between;
-  background: #f8fafc;
-  padding: 16px 20px;
-  border-bottom: 1px solid #e2e8f0;
-  text-align: center;
-}
-
-.highlight-box strong {
-  display: block;
-  font-size: 20px;
-  color: #0f172a;
-}
-
-.highlight-box span {
-  font-size: 12px;
-  color: #64748b;
-}
-
-.details-list {
-  padding: 20px 24px;
-}
-
-.detail-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  font-size: 14px;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.detail-row:last-child {
-  border-bottom: none;
-}
-
-.detail-row .label {
-  color: #64748b;
-}
-
-.detail-row .val {
-  font-weight: 600;
-  color: #1e293b;
-}
-
-.btn-call-now {
-  display: block;
-  background: #f59e0b;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px;
-  margin: 10px 24px 24px;
-  border-radius: 12px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.btn-call-now:hover {
-  background: #d97706;
-}
-
-/* التجاوب مع الموبايل */
-@media (max-width: 992px) {
-  .project-grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  .project-gallery {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .main-img {
-    grid-row: auto;
-  }
-}
 /* سكشن الصور والكارت */
 .project-details-section {
   max-width: 1200px;
@@ -249,7 +104,6 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
-  background-color: #e2e8f0;
 }
 
 .main-img {
@@ -345,44 +199,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   padding: 12px;
   border-radius: 10px;
   font-weight: 700;
   font-size: 15px;
   text-decoration: none;
   color: #ffffff;
+  text-align: center;
 }
 
 .btn-call {
   background-color: #f59e0b;
 }
 
-.btn-call:hover {
-  background-color: #d97706;
-}
-
 .btn-whatsapp {
   background-color: #25d366;
-}
-
-.btn-whatsapp:hover {
-  background-color: #1ebd56;
-}
-
-/* الموبايل */
-@media (max-width: 992px) {
-  .project-grid-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  .project-gallery {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .main-img {
-    grid-row: auto;
-  }
 }
