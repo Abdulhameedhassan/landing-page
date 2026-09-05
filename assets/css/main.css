@@ -1152,7 +1152,7 @@ body {
   .project-info-card {
     width: 90% !important;
     max-width: 380px !important;
-    margin-left: -15px !important; /* بيزقه من اليمين للشمال */
+    margin-left: -41px !important; /* بيزقه من اليمين للشمال */
     margin-right: auto !important;
     box-sizing: border-box !important;
   }
