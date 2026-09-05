@@ -1211,3 +1211,28 @@ body {
     overflow-x: hidden !important;
   }
 }
+/* ضبط العرض المتوسط (التابلت والشاشات اللي بين 769px و 1024px) لعدم تداخل الهيدر */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .site-header {
+    padding: 12px 20px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .nav-links {
+    position: static !important;
+    transform: none !important;
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    margin: 0 6px !important;
+    font-size: 13px !important;
+  }
+}
