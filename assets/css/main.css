@@ -1198,3 +1198,16 @@ body {
     font-size: 16px !important;
   }
 }
+@media (max-width: 768px) {
+  /* تأكيد احتواء الكارت داخل الشاشة تماماً */
+  .project-details-section, 
+  .price-card, 
+  .details-container,
+  div[style*="background"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow-x: hidden !important;
+  }
+}
