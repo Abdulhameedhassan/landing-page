@@ -1080,3 +1080,195 @@ body {
     display: none !important;
   }
 }
+/* إصلاح شامل ومباشر لعرض كارت التفاصيل بالكامل في الموبايل */
+@media (max-width: 768px) {
+  /* اجبار الحاوية الأساسية للكارت على الالتزام بعرض مناسب ومرتب */
+  .project-info-card {
+    width: 94% !important;
+    max-width: 100% !important;
+    margin: 0 auto 20px auto !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+    overflow: hidden !important;
+  }
+
+  /* اجبار الجزء العلوي والسعر وأرقام الهيلايتس على الالتزام بالعرض */
+  .card-top-header, 
+  .highlights-row, 
+  .details-list {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+
+  /* ضبط صفوف التفاصيل الداخلية (Unit Type وغيرها) وتوسيع مساحتها بالكامل */
+  .detail-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 8px 4px !important;
+  }
+
+  .detail-row .label, 
+  .detail-row .val {
+    font-size: 12px !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* الأزرار تحت بعضها وبنفس عرض الكارت تماماً */
+  .card-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  .btn-action, 
+  .btn-call, 
+  .btn-whatsapp {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    text-align: center !important;
+    display: block !important;
+  }
+
+  /* لون زرار الاتصال رمادي زي ما طلبت */
+  .btn-call, 
+  a[href^="tel"] {
+    background-color: #555555 !important;
+    color: #ffffff !important;
+    border: none !important;
+  }
+}
+/* إزاحة كارت التفاصيل ناحية الشمال ليصبح في منتصف شاشة الموبايل تماماً */
+@media (max-width: 768px) {
+  .project-info-card {
+    width: 90% !important;
+    max-width: 380px !important;
+    margin-left: -15px !important; /* بيزقه من اليمين للشمال */
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+}
+/* إخفاء زرار الهمبرجر في الديسككتوب */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  z-index: 1000;
+}
+
+/* شكل الخطوط التلاتة لزرار الهمبرجر (بلون رمادي متناسق) */
+.hamburger-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #555555;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* --- إصلاح نهائي لهيدر الموبايل (لوجو شمال وزرار يمين) --- */
+@media (max-width: 768px) {
+  /* إلغاء أي بادنج إضافي في الجسم لو واعملك مسافة فوق */
+  body {
+    margin-top: 0 !important;
+  }
+
+  /* ظبط الهيدر ليكون مساحة واحدة متناسقة */
+  .site-header {
+    padding: 10px 15px !important;
+  }
+
+  /* تحويل حاوية الهيدر إلى صف أفقى (Flex Row) وتوزيع العناصر بين الطرفين */
+  .header-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* إخفاء القائمة العادية تماماً */
+  .nav-links {
+    display: none !important;
+  }
+
+  /* تثبيت اللوجو في الناحية اليسار */
+  .logo {
+    order: 1 !important;
+    margin-right: auto !important;
+  }
+
+  .logo img, .logo svg {
+    max-width: 90px !important;
+    height: auto !important;
+  }
+
+  /* زرار الهمبرجر يروح الناحية اليمين */
+  .hamburger-btn {
+    display: flex !important;
+    order: 2 !important;
+    margin-left: 15px !important;
+  }
+
+  /* زرار تحويل اللغة (لو موجود) يترتب جنبهم لو حابب */
+  .lang-switch {
+    order: 3 !important;
+  }
+}
+@media (max-width: 768px) {
+  /* لما القائمة تفتح تظهر بشكل منسق تحت الهيدر */
+  .nav-links.active-mobile-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 20 !important;
+    width: 100% !important;
+    background-color: #ffffff !important;
+    padding: 10px !important;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05) !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    z-index: 999;
+  }
+}
+/* تثبيت ارتفاع الهيدر وعدم السماح له بالتمدد */
+.site-header {
+  height: 80px !important; /* أو الارتفاع الأصلي المناسب عندك */
+  max-height: 80px !important;
+  padding-top: 30px !important;
+  padding-bottom: 20px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* جعل اللوجو يملى ارتفاع الحاوية بس من غير ما يكبر الهيدر */
+.logo {
+  height: 100% !important;
+  display: flex;
+  align-items: center;
+}
+
+.logo img, .logo svg {
+  height: 100% !important;
+  width: auto !important;
+  max-height: 90px !important; /* تحكم في الارتفاع الأقصى جوه الهيدر من هنا */
+  object-fit: contain !important;
+}
