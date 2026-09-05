@@ -1102,3 +1102,57 @@ body {
   max-width: 100%;
   height: auto;
 }
+@media (max-width: 768px) {
+  .project-details-section, 
+  .price-card, 
+  .details-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    overflow-x: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-header nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 15px 0;
+  }
+
+  .site-header nav.active {
+    display: block;
+  }
+
+  .site-header .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
