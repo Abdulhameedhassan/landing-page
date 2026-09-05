@@ -1073,3 +1073,10 @@ body {
     padding: 6px 4px !important;
   }
 }
+/* إخفاء روابط الهيدر تماماً في الموبايل مؤقتاً لحد بكرة */
+@media (max-width: 768px) {
+  .header-container nav,
+  .nav-links {
+    display: none !important;
+  }
+}
