@@ -72,55 +72,7 @@ body {
   color: #ffffff;
   border-radius: 4px;
 }
-/* تنسيق الشاشات الصغيرة والموبايل وقائمة الهمبرجر */
-@media (max-width: 768px) {
-  .site-header {
-    padding: 10px 15px;
-  }
 
-  /* إخفاء القائمة العادية في الموبايل */
-  .header-container nav,
-  .nav-links {
-    display: none !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: none !important;
-  }
-
-  /* إظهار القائمة عند تفعيلها بزر الهمبرجر */
-  .header-container nav.active,
-  .nav-links.active {
-    display: flex !important;
-  }
-
-  .nav-links a {
-    margin: 8px 0;
-    font-size: 15px;
-  }
-
-  /* إظهار زر الهمبرجر في الموبايل (تأكد من وجود الكلاس في الـ HTML) */
-  .menu-toggle {
-    display: block !important;
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-  }
-}
-
-/* إخفاء زر الهمبرجر في الديسكتوب */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-}
 /* العنوان والمسار */
 .hero-text-section {
   max-width: 1200px;
@@ -1202,5 +1154,47 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+  }
+}
+/* إظهار زر الهمبرجر فقط في الشاشات الأقل من 900px */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #111;
+}
+
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block !important;
+  }
+
+  /* إخفاء روابط التنقل العادية افتراضياً في الموبايل والتابلت الصغير */
+  .header-container nav,
+  .nav-links {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: none !important;
+  }
+
+  /* إظهار القائمة عند الضغط على زر الهمبرجر */
+  .header-container nav.active,
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .nav-links a {
+    margin: 10px 0 !important;
+    font-size: 16px !important;
   }
 }
