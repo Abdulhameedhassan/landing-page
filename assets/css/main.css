@@ -1012,3 +1012,86 @@ body {
     font-size: 13px;
   }
 }
+/* منع أي خروج للصفحة يمين أو شمال في الموبايل */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* تنسيق الهيدر في الموبايل */
+  .site-header {
+    padding: 10px 15px !important;
+  }
+
+  .header-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  /* ضبط حجم اللوجو للموبايل */
+  .logo img, .logo svg {
+    max-width: 100px !important;
+    height: auto !important;
+  }
+
+  /* إخفاء الروابط العادية وإعدادها لتفتح من الهمبرجر */
+  .nav-links {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #ffffff !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 20px 0 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    z-index: 9999 !important;
+  }
+
+  /* إظهار القائمة لما تضغط على زر الهمبرجر وتكتسب كلاس active */
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  .nav-links a {
+    margin: 10px 0 !important;
+    font-size: 16px !important;
+    color: #333 !important;
+  }
+
+  /* إظهار زر الهمبرجر في الموبايل */
+  .menu-toggle {
+    display: block !important;
+    background: none !important;
+    border: none !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+  }
+
+  /* ضبط كارت الأسعار والجدول في الموبايل عشان ما يطلعش بره الشاشة */
+  .project-details-section, 
+  .price-card, 
+  .details-container,
+  div[style*="background"] {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+/* إخفاء زر الهمبرجر تماماً في الديسكتوب عشان ما يظهرش بالغلط */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
