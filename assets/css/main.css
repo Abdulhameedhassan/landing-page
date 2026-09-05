@@ -1038,38 +1038,35 @@ body {
     width: 100% !important;
   }
 }
-/* إصلاح نهائي لكارت السعر وجدول التفاصيل في الموبايل */
+/* اجبار كارت السعر والجدول على قبول السكرول الداخلي في الموبايل وعدم الخروج بره الإطار */
 @media (max-width: 768px) {
-  /* اجبار الحاوية الأساسية والكارت على الالتزام بعرض الشاشة مع هوامش بسيطة */
+  /* تحويل أي جدول أو حاوية تفاصيل لعنصر قابل للتمرير داخلياً */
   .project-details-section, 
   .price-card, 
   .details-container,
-  div[class*="price"],
-  div[class*="detail"] {
+  div[style*="background"] {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    overflow: hidden !important; /* منع خروج أي حاجة بره الإطار الأبيض */
+    padding: 10px !important;
   }
 
-  /* جعل الجدول مرناً أو قابل للتمرير الأفقي بدون كسر الصفحة لو كان طويلاً */
+  /* اجبار الجدول نفسه على الاحتواء مع إمكانية التمرير داخله لو عريض */
   .project-details-table, 
   table {
+    display: block !important;
     width: 100% !important;
-    max-width: 100% !important;
-    display: table !important;
-    table-layout: fixed !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important; /* منع تداخل الكلام فوق بعضه */
   }
 
+  /* تصغير خط الجدول والمسافات عشان يبان بشكل أفضل */
   .project-details-table th, 
   .project-details-table td,
   td, th {
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    font-size: 12px !important;
-    padding: 6px 4px !important;
+    font-size: 11px !important;
+    padding: 6px 8px !important;
   }
 }
