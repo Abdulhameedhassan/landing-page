@@ -506,19 +506,31 @@
   }
 });
   </script>
-  <script>
+ <script>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwIQk-PwtgnrPrLvrytNBJNI7gRFfQ9VrzI-hdXUoWf9RW9V1JSH2bTttm9m1W-4e_w/exec';
-const form = document.querySelector('form'); // تأكد إن الـ form عندك في الـ HTML ليه الوسم الأساسي <form>
+const form = document.querySelector('form');
 
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-        alert('تم ارسال رسالتك بنجاح!');
-        form.reset(); // بيفرغ حقول الفورم بعد الإرسال
-      })
-      .catch(error => console.error('Error!', error.message));
+    
+    // تجهيز البيانات بشكل صحيح لتتوافق مع جوجل سكريبت
+    const formData = new FormData(form);
+    const params = new URLSearchParams();
+    for (const pair of formData.entries()) {
+      params.append(pair[0], pair[1]);
+    }
+
+    fetch(scriptURL, { 
+      method: 'POST', 
+      mode: 'no-cors', // دي اللي بتمنع حظر المتصفح وتخلي الطلب يروح صح
+      body: params
+    })
+    .then(() => {
+      alert('تم ارسال رسالتك بنجاح!');
+      form.reset();
+    })
+    .catch(error => console.error('Error!', error.message));
   });
 }
 </script>
