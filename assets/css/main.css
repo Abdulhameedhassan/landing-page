@@ -1017,3 +1017,80 @@ body {
     padding: 2px 5px;
   }
 }
+/* إظهار صور المشروع الأولى بوضوح في الديسكتوب والموبايل */
+.project-images, .hero-images, .gallery-grid {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.project-images img, .hero-images img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+/* ضبط كارت تفاصيل السعر والجدول على الموبايل */
+@media (max-width: 768px) {
+  .project-details-table, .details-table-wrapper, .price-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+  .project-details-table th, .project-details-table td {
+    font-size: 13px;
+    padding: 8px 6px;
+  }
+}
+/* تصميم قائمة الهمبرجر للموبايل */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #111;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-header nav {
+    display: none; /* مخفية افتراضياً حتى يتم الضغط عليها أو حسب الرغبة */
+    width: 100%;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+  }
+
+  .site-header nav.active {
+    display: flex;
+  }
+
+  .site-header .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
