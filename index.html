@@ -15,7 +15,12 @@
       <div class="logo">
         <a href="https://the8-realestate.com/"><img src="images/the8realestate.png" alt="the8realestate" style="height: 50px;"></a>
       </div>
-      
+      <!-- زرار الهمبرجر للموبايل -->
+    <button class="hamburger-btn" aria-label="Open Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
       <nav class="nav-links">
         <a href="https://the8-realestate.com/">Home</a>
         <a href="https://the8-realestate.com/18039-2/">Projects</a>
@@ -134,7 +139,7 @@
           <p>The project's customer service is ready to answer all your questions and help you choose the right unit.</p>
           
           <div class="cta-buttons-group">
-            <a href="https://wa.me/201000000000" target="_blank" class="cta-btn btn-wa">
+            <a href="https://wa.me/201000000000" target="_blank" class="cta-btn btn-wa"> 
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
               WhatsApp
             </a>
@@ -488,7 +493,35 @@
 
     </div> <!-- نهاية content-grid-container -->
   </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerBtn = document.querySelector('.hamburger-btn');
+  const navLinks = document.querySelector('.nav-links');
 
+  if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', function() {
+      // تبديل حالة ظهور القائمة
+      navLinks.classList.toggle('active-mobile-menu');
+    });
+  }
+});
+  </script>
+  <script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwIQk-PwtgnrPrLvrytNBJNI7gRFfQ9VrzI-hdXUoWf9RW9V1JSH2bTttm9m1W-4e_w/exec';
+const form = document.querySelector('form'); // تأكد إن الـ form عندك في الـ HTML ليه الوسم الأساسي <form>
+
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        alert('تم ارسال رسالتك بنجاح!');
+        form.reset(); // بيفرغ حقول الفورم بعد الإرسال
+      })
+      .catch(error => console.error('Error!', error.message));
+  });
+}
+</script>
 </body>
 </html>
 <!-- Footer Section -->
