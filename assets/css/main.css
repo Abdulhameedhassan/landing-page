@@ -1094,3 +1094,11 @@ body {
     gap: 12px;
   }
 }
+/* إجبار الصور الأولى على الظهور بوضوح */
+.project-images img, 
+.hero-section img, 
+.gallery img {
+  display: block !important;
+  max-width: 100%;
+  height: auto;
+}
