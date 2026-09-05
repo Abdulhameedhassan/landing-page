@@ -506,7 +506,7 @@
   }
 });
   </script>
- <script>
+  <script>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbwIQk-PwtgnrPrLvrytNBJNI7gRFfQ9VrzI-hdXUoWf9RW9V1JSH2bTttm9m1W-4e_w/exec';
 const form = document.querySelector('form');
 
@@ -514,23 +514,22 @@ if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
     
-    // تجهيز البيانات بشكل صحيح لتتوافق مع جوجل سكريبت
+    // تحويل حقول الفورم لشكل يفهمه جوجل سكريبت مباشرة
     const formData = new FormData(form);
-    const params = new URLSearchParams();
-    for (const pair of formData.entries()) {
-      params.append(pair[0], pair[1]);
-    }
-
+    
     fetch(scriptURL, { 
       method: 'POST', 
-      mode: 'no-cors', // دي اللي بتمنع حظر المتصفح وتخلي الطلب يروح صح
-      body: params
+      body: formData
     })
-    .then(() => {
+    .then(response => response.json())
+    .then(data => {
       alert('تم ارسال رسالتك بنجاح!');
       form.reset();
     })
-    .catch(error => console.error('Error!', error.message));
+    .catch(error => {
+      console.error('Error!', error.message);
+      alert('حدث خطأ أثناء الإرسال');
+    });
   });
 }
 </script>
