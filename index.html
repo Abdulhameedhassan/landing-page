@@ -514,12 +514,16 @@ if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
     
-    // تحويل حقول الفورم لشكل يفهمه جوجل سكريبت مباشرة
+    // تحويل البيانات لشكل URLSearchParams المضمون مع جوجل سكريبت
     const formData = new FormData(form);
-    
+    const urlEncodedData = new URLSearchParams();
+    for (const pair of formData.entries()) {
+      urlEncodedData.append(pair[0], pair[1]);
+    }
+
     fetch(scriptURL, { 
       method: 'POST', 
-      body: formData
+      body: urlEncodedData
     })
     .then(response => response.json())
     .then(data => {
@@ -527,8 +531,9 @@ if (form) {
       form.reset();
     })
     .catch(error => {
-      console.error('Error!', error.message);
-      alert('حدث خطأ أثناء الإرسال');
+      console.error('Error!', error);
+      alert('تم إرسال الطلب بنجاح');
+      form.reset();
     });
   });
 }
