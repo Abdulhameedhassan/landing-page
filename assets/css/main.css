@@ -129,7 +129,23 @@ body {
 .main-img {
   grid-row: 1 / span 2;
 }
+@media (max-width: 768px) {
+  .project-gallery {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    gap: 12px;
+  }
 
+  .gallery-item img {
+    height: 250px; /* طول مناسب جداً للصور على الموبايل */
+  }
+
+  .main-img {
+    grid-row: auto;
+  }
+}
 /* الكارت */
 .project-info-card {
   background: #ffffff;
@@ -1051,8 +1067,8 @@ body {
     box-sizing: border-box !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
   }
 
   /* جعل الجدول مرناً أو قابل للتمرير الأفقي بدون كسر الصفحة لو كان طويلاً */
@@ -1271,4 +1287,26 @@ body {
   width: auto !important;
   max-height: 90px !important; /* تحكم في الارتفاع الأقصى جوه الهيدر من هنا */
   object-fit: contain !important;
+}
+@media (max-width: 768px) {
+    /* بنخلي الـ Grid أو الكانتينر الرئيسي يعرض العناصر تحت بعضها بالترتيب */
+    .project-grid-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+}
+@media (max-width: 768px) {
+    .project-info-card, 
+    .project-details-section .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
 }
