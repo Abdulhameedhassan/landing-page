@@ -1310,3 +1310,59 @@ body {
         padding-right: 16px !important;
     }
 }
+/* شاشات الديسك توب تفضل زي ما هي سليمة 100% */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* على الموبايل بس (الشاشات الأصغر من 768 بيكسل) نخلي الصورة تنزل جوه الإطار تماماً */
+@media (max-width: 768px) {
+    img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain;
+    }
+}
+.footer-logo-wrapper img {
+    width: 120px !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+/* تعديل صورة البانر على الديسك توب فقط */
+@media (min-width: 768px) {
+    .content-banner-img {
+        width: 100%;
+        max-height: 450px; /* ظبط الارتفاع ده لو عايزها أصغر أو أكبر شوية */
+        overflow: hidden;
+        border-radius: 12px; /* عشان تحافظ على الحواف المدورة */
+        margin: 20px auto;
+    }
+
+    .content-banner-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;   /* بتمنع البكسلة وتخلي الصورة تملا الإطار بشكل متناسق */
+        object-position: center;
+        display: block;
+    }
+}
+/* إجبار تعديل الصورة على الديسك توب بـ !important */
+@media (min-width: 768px) {
+    div.content-banner-img {
+        width: 100% !important;
+        max-height: 480px !important;
+        height: 480px !important;
+        overflow: hidden !important;
+        border-radius: 12px !important;
+        margin: 20px auto !important;
+    }
+
+    div.content-banner-img img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        display: block !important;
+    }
+}
